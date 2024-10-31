@@ -7,7 +7,7 @@ const items: MenuProps['items'] = [
     {
         key: '1',
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Queria%20consultar%20el%20precio%20acerca%20de...">
                 Contactate con nosotros
             </a>
         ),
@@ -22,20 +22,6 @@ const items: MenuProps['items'] = [
     //     ),
     //     icon: <SmileOutlined />,
     //     disabled: true,
-    // },
-    // {
-    //     key: '3',
-    //     label: (
-    //         <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-    //             3rd menu item (disabled)
-    //         </a>
-    //     ),
-    //     disabled: true,
-    // },
-    // {
-    //     key: '4',
-    //     danger: true,
-    //     label: 'a danger item',
     // },
 ];
 
