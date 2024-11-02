@@ -53,7 +53,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <DollarOutlined />
                         <Link href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Me%20interesa%20el%20siguiente%20producto%20${title}`}>
-                            <label>Comprar</label>
+                            <a target='_blank' rel='noopener noreferrer'>
+                                <label>Comprar</label>
+                            </a>
                         </Link>
                     </div>,
                 ] : [
