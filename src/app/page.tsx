@@ -18,7 +18,7 @@ export default function Home() {
             <DropdownHeader />
           </div>
         </Header>
-        <Content style={{ backgroundColor: '#FFFFFF80', minHeight: '90svh', padding: '12px' }} >
+        <Content style={{ backgroundColor: '#FFFFFF80', minHeight: '90svh', padding: '4px' }} >
           <ContentComponent />
         </Content>
         <Footer style={{ backgroundColor: '#f1ecdf', fontFamily: 'Raleway' }}>

@@ -4,7 +4,7 @@ interface Response {
   nombre: string
   precio: number | string
   stock: number | string
-  foto: string
+  foto: string | any
 }
 
 export async function getProducts() {

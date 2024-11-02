@@ -12,11 +12,11 @@ export default function ContentComponent() {
     useEffect(() => {
         getProducts().then(setProducts)
     }, [])
-    console.log(products)
+
     return (
         <div className={styles.container}>
             {Array.isArray(products) && products.map((product: any) => (
-                <ProductCard key={product.nombre} imageSrc={product.foto} title={product.nombre} price={product.precio} />
+                <ProductCard key={product.nombre} imageUrl={product.foto} title={product.nombre} price={product.precio} stock={product.stock} />
             ))}
             <Link href={'https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Queria%20consultar%20el%20precio%20acerca%20de...'} target='_blank' >
                 <FloatButton badge={{ count: 1, color: 'red' }} icon={<WhatsAppOutlined size={24} />} />
