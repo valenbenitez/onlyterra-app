@@ -1,0 +1,164 @@
+.main {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #f1e0db;
+}
+
+.title {
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.productCard {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+}
+
+.productImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.productTitle {
+    font-family: Raleway;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    text-align: center;
+    color: #333;
+}
+
+.productPrice {
+    font-family: Montserrat;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    .productImage {
+        height: 200px;
+    }
+
+    .productTitle {
+        font-size: 1rem;
+    }
+
+    .productPrice {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .productsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .productCard {
+        max-width: 100%;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.button {
+    cursor: pointer;
+    font-family: Raleway;
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 500;
+}
+
+.buyButton {
+    background-color: #000;
+    color: #f1e0db;
+}
+
+.buyButton:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.detailButton {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.detailButton:hover {
+    background-color: #f1e0db;
+    transform: translateY(-2px);
+}
+
+/* Actualizar media queries para incluir los botones */
+@media (max-width: 768px) {
+    /* ... estilos existentes ... */
+
+    .button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... estilos existentes ... */
+
+    .buttonContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .button {
+        width: 100%;
+    }
+}

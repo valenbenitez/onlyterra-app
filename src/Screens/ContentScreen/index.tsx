@@ -5,13 +5,23 @@ import ProductCard from '@/components/ProductCard'
 import { FloatButton } from 'antd';
 import { WhatsAppOutlined } from '@ant-design/icons';
 import Link from 'next/link';
+import LoadingScreen from '@/components/Loading';
 
 export default function ContentComponent() {
-    const [products, setProducts] = useState<any>([])
+    const [products, setProducts] = useState<any>([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        getProducts().then(setProducts)
+        setIsLoading(true);
+        getProducts().then((response) => {
+            setProducts(response)
+            setIsLoading(false);
+        })
     }, [])
+
+    if(isLoading) {
+        return <LoadingScreen/>
+    }
 
     return (
         <div className={styles.container}>

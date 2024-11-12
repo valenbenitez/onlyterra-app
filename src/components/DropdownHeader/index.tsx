@@ -1,7 +1,9 @@
+'use client'
 import React from 'react';
 import { MenuOutlined, QuestionCircleOutlined, SmileOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
+import Link from 'next/link';
 
 const items: MenuProps['items'] = [
     {
@@ -13,16 +15,16 @@ const items: MenuProps['items'] = [
         ),
         icon: <QuestionCircleOutlined />,
     },
-    // {
-    //     key: '2',
-    //     label: (
-    //         <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-    //             2nd menu item (disabled)
-    //         </a>
-    //     ),
-    //     icon: <SmileOutlined />,
-    //     disabled: true,
-    // },
+    {
+        key: '2',
+        label: (
+            <Link href="/productos">
+                Productos
+            </Link>
+        ),
+        icon: <SmileOutlined />,
+        disabled: false,
+    },
 ];
 
 const DropdownHeader: React.FC = () => (

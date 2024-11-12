@@ -1,4 +1,237 @@
-.main {
+.container {
+  font-family: Montserrat;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  background-color: #f1e0db;
+}
+
+.header {
+  background-color: #f1e0db;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Raleway;
+}
+
+.logo {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.header h1 {
+  margin: 0;
+  font-family: Raleway;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #e0e0e0;
+}
+
+
+.mainSection {
+  background-color: #f1e0db;
+  padding: 4rem 2rem;
+  font-family: Montserrat;
+}
+
+.mainSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: Montserrat;
+}
+
+.mainSection p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-family: Montserrat;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.imageContent {
+  flex: 1;
+}
+
+.mainImage {
+  width: 100%;
+  height: 70svh;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.textContent h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: Raleway;
+  font-weight: bold;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: Raleway;
+  font-weight: lighter;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column-reverse; /* La imagen aparecerá arriba en móviles */
+    text-align: center;
+  }
+
+  .textContent, .imageContent {
+    width: 100%;
+  }
+
+  .mainSection {
+    padding: 2rem 1rem;
+  }
+
+  .textContent h2 {
+    font-size: 2rem;
+  }
+}
+
+.button {
+  cursor: pointer;
+  background-color: #f1e0db;
+  border: 1px solid #000;
+  font-family: Raleway;
+  padding: 20px 20px;
+  font-size: 1rem;
+}
+
+.featuresSection {
+  min-height: 80svh;
+  padding: 4rem 2rem;
+  background-color: white;
+  font-family: Montserrat;
+}
+
+.featuresSection h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: Montserrat;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.featuresContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+}
+
+.productImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.productTitle {
+  font-family: Raleway;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.productPrice {
+  font-family: Montserrat;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .featuresContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .featureItem {
+    padding: 0.8rem;
+  }
+  
+  .productImage {
+    height: 150px;
+  }
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+
+.button:hover {
+  background-color: #000;
+  color: #f1e0db;
+}
+
+.footer {
+  background-color: #f1e0db;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-family: Montserrat;
+}
+
+
+/* .main {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
@@ -22,4 +255,4 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
