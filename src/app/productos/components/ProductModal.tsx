@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link';
-import styles from './ProductModal.module.css'
+import styles from './productModal.module.css'
 
 interface ProductModalProps {
     product: {
