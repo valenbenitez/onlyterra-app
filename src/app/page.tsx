@@ -2,12 +2,11 @@ import styles from './page.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProducts } from '@/services/getProducts'
-import { Button } from 'antd';
-
+import ClientProducts from '@/components/ClientProducts';
 
 export default async function App() {
   const products = await getProducts();
-  const featuredProducts = products?.slice(0, 3);
+  const featuredProducts: any = products?.slice(0, 3);
   
   return (
     <div className={styles.container}>
@@ -23,7 +22,7 @@ export default async function App() {
             </div>
             <div className={styles.imageContent}>
               <Image
-                src="/new_header.webp" // Reemplaza con tu ruta de imagen
+                src="/new_header.webp"
                 alt="Sistema de turnos"
                 width={500}
                 height={400}
@@ -36,19 +35,7 @@ export default async function App() {
         <section className={styles.featuresSection}>
           <h2>Algunos de nuestros seleccionados</h2>
           <div className={styles.featuresContainer}>
-            {Array.isArray(featuredProducts) && featuredProducts.map((product) => (
-              <div key={product.nombre} className={styles.featureItem}>
-                <img
-                  src={product.foto}
-                  alt={product.nombre}
-                  width={200}
-                  height={200}
-                  className={styles.productImage}
-                />
-                <h3 className={styles.productTitle}>{product.nombre}</h3>
-                <p className={styles.productPrice}>${product.precio}</p>
-              </div>
-            ))}
+            <ClientProducts products={featuredProducts} />
           </div>
           <div className={styles.viewAllContainer}>
             <Link href="/productos">

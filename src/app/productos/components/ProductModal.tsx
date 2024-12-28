@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link';
 import styles from './productModal.module.css'
+import Image from 'next/image';
 
 interface ProductModalProps {
     product: {
@@ -22,11 +23,17 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 >
                     ×
                 </button>
-                <img
+                <Image
                     src={product.foto}
                     alt={product.nombre}
                     className={styles.productImage}
                     style={{ height: '350px' }}
+                    width={200}
+                    height={200}
+                    priority={false}
+                    onError={(e: any) => {
+                        e.target.src = '/placeholder.jpg'
+                    }}
                 />
                 <h3 className={styles.productTitle}>{product.nombre}</h3>
                 <p className={styles.productPrice}>${product.precio}</p>
