@@ -23,7 +23,7 @@ export default async function App() {
             </div>
             <div className={styles.imageContent}>
               <Image
-                src="/header_image.webp" // Reemplaza con tu ruta de imagen
+                src="/new_header.webp" // Reemplaza con tu ruta de imagen
                 alt="Sistema de turnos"
                 width={500}
                 height={400}
