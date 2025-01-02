@@ -20,20 +20,28 @@ export const ProductCard = ({ product, onProductSelect }: ProductCardProps) => {
             <h3 className={styles.productTitle}>{product.nombre}</h3>
             <p className={styles.productPrice}>${product.precio}</p>
             <div className={styles.buttonContainer}>
-                <Link
-                    target='_blank'
-                    href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Estoy%20interesado%20en%20${product.nombre}`}
-                >
-                    <button className={`${styles.button} ${styles.buyButton}`}>
-                        Comprar
-                    </button>
-                </Link>
-                <button
-                    className={`${styles.button} ${styles.detailButton}`}
-                    onClick={() => onProductSelect(product)}
-                >
-                    Detalle
-                </button>
+                {product.stock === 'si' ? (
+                    <>
+                        <Link
+                            target='_blank'
+                            href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Estoy%20interesado%20en%20${product.nombre}`}
+                        >
+                            <button className={`${styles.button} ${styles.buyButton}`}>
+                                Comprar
+                            </button>
+                        </Link>
+                        <button
+                            className={`${styles.button} ${styles.detailButton}`}
+                            onClick={() => onProductSelect(product)}
+                        >
+                            Detalle
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <label>Sin stock</label>
+                    </>
+                ) }
             </div>
         </div>
     )

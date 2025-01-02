@@ -5,6 +5,7 @@ export interface Product {
   foto: string
   categoria: string
   descripcion?: string
+  stock?: string
 }
 
 export interface CategoryFilterProps {
