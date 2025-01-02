@@ -9,6 +9,7 @@ interface ProductModalProps {
         nombre: string;
         precio: number;
         descripcion?: string;
+        stock?: string;
     };
     onClose: () => void;
 }
@@ -41,8 +42,8 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                     {product.descripcion || 'No hay descripción disponible'}
                 </p>
                 <Link target='_blank' href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Queria%20consultar%20el%20precio%20acerca%20de%20${product.nombre}`}>
-                    <button className={`${styles.button} ${styles.buyButton}`}>
-                        Comprar
+                    <button disabled={product?.stock === 'si' ? false : true} className={`${styles.button} ${styles.buyButton}`}>
+                        {product?.stock === 'si' ? 'Comprar' : 'Producto sin stock'}
                     </button>
                 </Link>
             </div>
