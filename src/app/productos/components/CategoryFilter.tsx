@@ -6,19 +6,24 @@ export const CategoryFilter = ({
     selectedCategory,
     onCategoryChange
 }: CategoryFilterProps) => {
+    const handleCategoryChange = (categoria: string) => {
+        console.log('Categoría seleccionada:', categoria); // Para debugging
+        onCategoryChange(categoria.toLowerCase());
+    };
+
     return (
         <div className={styles.filterContainer}>
             <button
                 className={`${styles.filterButton} ${selectedCategory === 'todos' ? styles.active : ''}`}
-                onClick={() => onCategoryChange('todos')}
+                onClick={() => handleCategoryChange('todos')}
             >
                 Todos
             </button>
             {categories.map((categoria) => (
                 <button
                     key={categoria}
-                    className={`${styles.filterButton} ${selectedCategory === categoria ? styles.active : ''}`}
-                    onClick={() => onCategoryChange(categoria)}
+                    className={`${styles.filterButton} ${selectedCategory === categoria.toLowerCase() ? styles.active : ''}`}
+                    onClick={() => handleCategoryChange(categoria)}
                 >
                     {categoria}
                 </button>

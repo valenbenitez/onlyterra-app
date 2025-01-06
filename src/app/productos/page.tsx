@@ -1,7 +1,5 @@
 "use client";
-import { getProducts } from "@/services/getProducts";
 import styles from "./productos.module.css";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import ProductModal from "./components/ProductModal";
 import Image from "next/image";
@@ -35,7 +33,7 @@ export default function Products() {
       <div className={styles.productsGrid}>
         {Array.isArray(products) &&
           products.map((product: any) => (
-            <div key={`${product.id}`} className={styles.productCard}>
+            <div key={`${product.nombre}${product.id}`} className={styles.productCard}>
               <Image
                 src={`${product.foto}`}
                 alt={`${product.nombre}`}
@@ -43,9 +41,6 @@ export default function Products() {
                 height={200}
                 className={styles.productImage}
                 priority={false}
-                onError={(e: any) => {
-                  e.target.src = "/placeholder.jpg";
-                }}
               />
               <h3 className={styles.productTitle}>{product.nombre}</h3>
               <p className={styles.productPrice}>${product.precio}</p>

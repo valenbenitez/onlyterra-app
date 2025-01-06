@@ -13,9 +13,9 @@ export const useProducts = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response:any = await getProducts()
+                const response: any = await getProducts()
                 setProducts(response)
-                const uniqueCategories:any = Array.from(new Set(response.map((product: Product) => product.categoria)))
+                const uniqueCategories: any = Array.from(new Set(response.map((product: Product) => product.categoria)))
                 setCategories(uniqueCategories)
             } catch (err) {
                 setError('Error al cargar los productos')
@@ -27,9 +27,12 @@ export const useProducts = () => {
         fetchProducts()
     }, [])
 
-    const filteredProducts = selectedCategory === 'todos'
-        ? products
-        : products.filter(product => product.categoria === selectedCategory)
+    const filteredProducts = selectedCategory === 'todos' 
+        ? products 
+        : products.filter(product => {
+            console.log('Comparando:', product.categoria?.toLowerCase(), 'con', selectedCategory)
+            return product.categoria?.toLowerCase() === selectedCategory
+        })
 
     return {
         products: filteredProducts,
