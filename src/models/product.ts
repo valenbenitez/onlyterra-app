@@ -6,6 +6,7 @@ export interface Product {
   categoria: string
   descripcion?: string
   stock?: string
+  cantidad?: number
 }
 
 export interface CategoryFilterProps {

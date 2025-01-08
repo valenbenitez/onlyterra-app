@@ -237,3 +237,18 @@
         transform: rotate(360deg);
     }
 }
+
+.lastUnit {
+    color: #ff4444;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}

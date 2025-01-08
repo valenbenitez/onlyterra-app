@@ -6,6 +6,7 @@ interface Response {
   stock: number | string
   foto: string | any
   id: string | number
+  cantidad: number
 }
 
 export async function getProducts() {

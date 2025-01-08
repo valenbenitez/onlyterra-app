@@ -14,6 +14,7 @@ export const useProducts = () => {
         const fetchProducts = async () => {
             try {
                 const response: any = await getProducts()
+                console.log(response)
                 setProducts(response)
                 const uniqueCategories: any = Array.from(new Set(response.map((product: Product) => product.categoria)))
                 setCategories(uniqueCategories)
@@ -30,12 +31,17 @@ export const useProducts = () => {
     const filteredProducts = selectedCategory === 'todos' 
         ? products 
         : products.filter(product => {
-            console.log('Comparando:', product.categoria?.toLowerCase(), 'con', selectedCategory)
             return product.categoria?.toLowerCase() === selectedCategory
         })
 
+    const sortedProducts = [...filteredProducts].sort((a, b) => {
+        if (a.stock === 'si' && b.stock === 'no') return -1;
+        if (a.stock === 'no' && b.stock === 'si') return 1;
+        return 0;
+    });
+
     return {
-        products: filteredProducts,
+        products: sortedProducts, // Retornamos los productos ordenados
         categories,
         selectedCategory,
         selectedProduct,

@@ -44,6 +44,9 @@ export default function Products() {
               />
               <h3 className={styles.productTitle}>{product.nombre}</h3>
               <p className={styles.productPrice}>${product.precio}</p>
+              {Number(product.cantidad) === 1 && (
+                <p className={styles.lastUnit}>¡Quedan pocas unidades ⌛!</p>
+              )}
               <div
                 className={styles.buttonContainer}
                 onClick={() => setSelectedProduct(product)}
