@@ -9,7 +9,7 @@ const items: MenuProps['items'] = [
     {
         key: '1',
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Queria%20consultar%20el%20precio%20acerca%20de...">
+            <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Estoy%20interesado%20en%20...">
                 Contactate con nosotros
             </a>
         ),

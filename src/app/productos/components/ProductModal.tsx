@@ -41,7 +41,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 <p className={styles.productDescription}>
                     {product.descripcion || 'No hay descripción disponible'}
                 </p>
-                <Link target='_blank' href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Queria%20consultar%20el%20precio%20acerca%20de%20${product.nombre}`}>
+                <Link target='_blank' href={`https://api.whatsapp.com/send?phone=541137777357&text=Hola!%20Estoy%20interesado%20en%20${product.nombre}`}>
                     <button disabled={product?.stock === 'si' ? false : true} className={`${styles.button} ${styles.buyButton}`}>
                         {product?.stock === 'si' ? 'Comprar' : 'Producto sin stock'}
                     </button>
